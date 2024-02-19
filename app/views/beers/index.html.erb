@@ -1,0 +1,25 @@
+<h1>All Beers</h1>
+<%= form_with(url: beers_path, method: "get") do %>
+  <%= text_field_tag(:query, params[:query], placeholder: "Search by name") %>
+  <%= submit_tag("Search") %>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Style</th>
+      <th>ABV</th>
+      <th>Brewery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @beers.each do |beer| %>
+      <tr>
+        <td><%= link_to beer.name, beer_path(beer) %></td>
+        <td><%= beer.style %></td>
+        <td><%= beer.abv %></td>
+        <td><%= link_to beer.brewery.name, brewery_path(beer.brewery) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

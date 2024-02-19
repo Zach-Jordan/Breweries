@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your App Name</title>
+  <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %>
+  <%= javascript_include_tag 'https://code.jquery.com/jquery-3.5.1.slim.min.js', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' %>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+    <%= link_to "Home", root_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "About", about_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Breweries", breweries_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Beers", beers_path, class: "nav-link" %>
+  </li>
+  </ul>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>
