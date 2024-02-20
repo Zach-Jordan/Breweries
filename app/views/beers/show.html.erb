@@ -1,4 +1,10 @@
-<h1><%= @beer.name %></h1>
-<p><strong>Style:</strong> <%= @beer.style %></p>
-<p><strong>ABV:</strong> <%= @beer.abv %></p>
-<p><strong>Brewery:</strong> <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></p>
+<div class="container mt-3">
+  <h1><%= @beer.name %></h1>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Style:</strong> <%= @beer.style %></p>
+      <p><strong>ABV:</strong> <%= @beer.abv %></p>
+      <p><strong>Brewery:</strong> <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></p>
+    </div>
+  </div>
+</div>

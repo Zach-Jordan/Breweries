@@ -1,12 +1,17 @@
-<h1><%= @brewery.name %></h1>
+<div class="container mt-3">
+  <h1><%= @brewery.name %></h1>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Address:</strong> <%= @brewery.address %></p>
+      <p><strong>Phone:</strong> <%= @brewery.phone %></p>
+      <p><strong>Website:</strong> <%= @brewery.website %></p>
+    </div>
+  </div>
 
-<p><strong>Address:</strong> <%= @brewery.address %></p>
-<p><strong>Phone:</strong> <%= @brewery.phone %></p>
-<p><strong>Website:</strong> <%= @brewery.website %></p>
-
-<h2>Beers</h2>
-<ul>
-  <% @beers.each do |beer| %>
-    <li><%= link_to beer.name, brewery_beer_path(@brewery, beer) %></li>
-  <% end %>
-</ul>
+  <h2>Beers</h2>
+  <ul>
+    <% @beers.each do |beer| %>
+      <li><%= link_to beer.name, brewery_beer_path(@brewery, beer) %></li>
+    <% end %>
+  </ul>
+</div>

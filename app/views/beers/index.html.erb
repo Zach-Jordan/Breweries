@@ -1,25 +1,33 @@
-<h1>All Beers</h1>
-<%= form_with(url: beers_path, method: "get") do %>
-  <%= text_field_tag(:query, params[:query], placeholder: "Search by name") %>
-  <%= submit_tag("Search") %>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Style</th>
-      <th>ABV</th>
-      <th>Brewery</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @beers.each do |beer| %>
+<div class="container mt-3">
+  <h1>All Beers</h1>
+
+  <%= form_with(url: beers_path, method: "get", class: "mt-3") do %>
+    <div class="input-group">
+      <%= text_field_tag(:query, params[:query], placeholder: "Search by name", class: "form-control") %>
+      <div class="input-group-append">
+        <%= submit_tag("Search", class: "btn btn-primary") %>
+      </div>
+    </div>
+  <% end %>
+
+  <table class="table mt-3">
+    <thead class="thead-light">
       <tr>
-        <td><%= link_to beer.name, beer_path(beer) %></td>
-        <td><%= beer.style %></td>
-        <td><%= beer.abv %></td>
-        <td><%= link_to beer.brewery.name, brewery_path(beer.brewery) %></td>
+        <th scope="col">Name</th>
+        <th scope="col">Style</th>
+        <th scope="col">ABV</th>
+        <th scope="col">Brewery</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @beers.each do |beer| %>
+        <tr>
+          <td><%= link_to beer.name, beer_path(beer) %></td>
+          <td><%= beer.style %></td>
+          <td><%= beer.abv %></td>
+          <td><%= link_to beer.brewery.name, brewery_path(beer.brewery) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
