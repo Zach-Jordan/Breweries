@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root "about#index"
+  root 'home#index'
   #About route
   get 'about', to: 'about#index'
   resources :beers, only: [:index, :show]
